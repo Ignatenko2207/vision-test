@@ -35,6 +35,10 @@ publishing {
     maven {
       url "http://52.59.15.182:8081/repository/maven-local"
       allowInsecureProtocol = true
+      credentials{
+          username 'admin'
+          password 'admin'
+      }
     }
   }
 
