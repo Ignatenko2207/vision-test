@@ -108,7 +108,7 @@ def dockerStop(dockerContainer) {
 
 //////////////////////////////////////////////////////////////////////////////
 
-def createPublishStep(image) {
+def createPublishStep(platform) {
     return {
         node(label: platform) {
           bat('gradlew publish')
