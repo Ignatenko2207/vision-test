@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.7.2'
     id 'io.spring.dependency-management' version '1.0.12.RELEASE'
     id 'java'
+    id 'maven-publish'
 }
 
 group = 'com.coupa'
@@ -27,4 +28,21 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+publishing {
+  repositories {
+    maven {
+      url "http://52.59.15.182:8081/repository/maven-local"
+      allowInsecureProtocol = true
+    }
+  }
+
+  publications {
+    mavenJava(MavenPublication) {
+      artifact(file("$buildDir/libs/$rootProject.name-$version" + ".jar")) {
+      }
+    }
+  }
+
 }
