@@ -33,7 +33,7 @@ tasks.named('test') {
 publishing {
   repositories {
     maven {
-      url "http://52.59.15.182:8081/repository/maven-local"
+      url "http://54.93.246.193:8081/repository/maven-local"
       allowInsecureProtocol = true
       credentials{
           username 'admin'
